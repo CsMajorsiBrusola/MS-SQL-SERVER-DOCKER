@@ -1,0 +1,47 @@
+{
+  "name": "SQL Server Development Environment",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-mssql.mssql"
+      ]
+    }
+  },
+  "forwardPorts": [1433]
+}
+
+
+
+1. Commit and push the `.devcontainer` folder to your GitHub repository.
+2. Open GitHub, click **Code > Codespaces > Create codespace on main**.
+3. *(If already inside a Codespace)*: Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`), type **Codespaces: Rebuild Container**, and press Enter.
+
+
+
+Once the Codespace opens:
+
+1. Click the **SQL Server icon** on the left Activity Bar.
+2. Click **+ Add Connection**.
+3. Fill in the connection prompts:
+   * **Server Name:** `db` or `localhost,1433`
+   * **Database Name:** *(Leave blank or enter `master`)*
+   * **Authentication Type:** `SQL Login`
+   * **User Name:** `sa`
+   * **Password:** `YourStrong@Password123`
+   * **Save Password:** `Yes`
+   * **Profile Name:** `Local SQL Server`
+
+
+
+
+---
+
+## Method 2: Quick Docker CLI Setup (Existing Codespace)
+
+If you are already inside a standard GitHub Codespace and want to start SQL Server instantly without modifying devcontainer files:
+
+1. Open the integrated terminal in your Codespace.
+2. Run the SQL Server 2022 Linux container:
